@@ -1,0 +1,417 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ccc;
+}
+
+/* Navbar */
+.nav {
+    min-height: 42px;
+    background-color: #EF5122;
+    display: flex; 
+    /* flex-direction mặc định = row  */
+    justify-content: space-between;
+    /* mặc định là flex-start bên trái 
+    space-between cách nhau dính mép*/
+}
+
+.nav-list {
+    padding-left: 0;
+    margin: auto 16px;
+}
+
+.nav-item {
+    color: #fff;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+/* Form layout */
+.form-container {
+    max-width: 720px;
+    padding: 32px;
+    margin: 36px auto 0 auto;
+    background-color: #fff;
+}
+
+.form__row {
+    padding: 8px 0;
+    display: flex;
+}
+
+.form__label {
+    min-width: 90px;
+    /* chiếm chỗ không tính kí tự bên trong */
+}
+
+.form__input {
+    flex: 1;
+    /* chiếm hết chỗ có thể, nếu có nhiều item con thì chia đều*/
+}
+
+
+/* Column layout */
+.column-layout {
+    margin-top: 36px;
+    padding: 12px 0;
+    background-color: #fff;
+    display: flex;
+}
+
+.column-item {
+    padding: 0 16px;
+}
+
+.sidebar-one {
+    flex: 1;
+    order:1;
+    /* vị trí của con trong container */
+}
+
+.main-column {
+    flex: 3;
+    order: 2;
+}
+
+.sidebar-two {
+    flex: 1;
+    order: 3;
+}
+
+
+/* Feature layout */
+.feature-layout {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* cách nhau không dính mép, + đều 2 bên con 
+    space-evenly cách đều các con và cả mép*/
+}
+
+/* PC, Tablet */
+@media (min-width: 740px) {
+    .feature-layout {
+        flex-direction: row;
+    }
+}
+
+.feature-item {
+    padding: 12px 16px;
+    margin-top: 16px;
+    flex-basis: 30%;
+    /* set size con */
+}
+
+.feature-item:nth-child(1) {
+    background-color: rgb(192, 227, 222);
+}
+
+.feature-item:nth-child(2) {
+    background-color: rgb(227, 200, 192);
+}
+
+.feature-item:nth-child(3) {
+    background-color: rgb(226, 192, 227);
+}
+
+
+/* Wrap layout */
+.wrap-layout {
+    background-color: #fff;
+    margin-top: 36px;
+    padding: 12px 0 32px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap-reverse;
+    /* mặc định là nowrap không xuống dòng
+    đảo chiều cross axis nên nhảy lên trên */
+}
+
+.wrap-layout__item {
+    width: 148px;
+    height: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: #EF5122;
+}
+
+
+/* Center layout */
+.center-layout {
+    background-color: rgb(192, 227, 194);
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+}
+
+.center-layout__item {
+    font-size: 42px;
+    font-weight: 700;
+    margin: auto;
+    /* display flex vào container xong, thành căn giữa */
+}
+
+/* Chart layout */
+.chart-layout {
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    height: 320px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: flex-end; dính tất cả con vào cross end */
+}
+
+.chart-layout__item {
+    align-self: flex-end;
+    /* dính con vào cross end, ghi đè align-items */
+    width: 60px;
+    color: #fff;
+    text-align: center;
+    height: var(--percent);
+    /* đặt biến */
+    background-color: #EF5122;
+    animation: growth ease-in 0.5s;
+}
+
+@keyframes growth {
+    from {
+        opacity: 0;
+        /* độ trong suốt */
+        height: calc(var(--percent) - 50%);
+    }
+    to {
+        opacity: 1;
+        height: var(--percent);
+    }
+}
+
+/* End */
+.the-end {
+    margin: 12px auto 0 auto;
+    padding: 32px 0;
+    max-width: 740px;
+    min-height: 360px;
+    display: flex;
+    /* flex-direction: row-reverse;
+    hướng các con theo hàng ngang*/
+}
+
+.the-end__first {
+    padding: 4px 16px;
+    background-color: #fff;
+    flex: 1;
+}
+
+.the-end__second {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* hướng các con theo cột*/
+}
+
+.the-end__second-one {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: rgb(227, 192, 214);
+}
+
+.the-end__second-two {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: rgb(192, 210, 227);
+}
+
+
+/* BEM */
+.bem1{
+    background-color: white;
+    margin: 12px auto 0 auto;
+    padding: 16px;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* main axis */
+    align-items: center; 
+    /* cross axis */
+}
+
+.blockbem{
+    margin-top: 12px;
+}
+
+.btn{
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+
+.btn + .btn{
+    margin-left: 16px;
+}
+.btn--success{
+    background-color: green;
+}
+
+.btn--warn{
+    background-color: orange;
+}
+
+.btn--danger{
+    background-color: red;
+}
+.btn--erorr{
+    background-color: #ff623d;
+  }
+
+.btn--size-s{
+    padding: 5px 12px;
+}
+
+.btn--size-l{
+    padding: 9px 15px;
+}
+
+.btn--disable{
+    opacity: 0.5 !important;
+    cursor: default;
+}
+
+/* ======= BEM 2 ======== */
+.bem2{
+    background-color: white;
+    margin: 36px auto 0 auto;
+    padding: 16px;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* main axis */
+    align-items: center; 
+    /* cross axis */
+}
+  
+.toast {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear 0.3s;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(calc(100% + 32px));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .toast--success {
+    border-color: #47d864;
+  }
+  
+  .toast--success .toast__icon {
+    color: #47d864;
+  }
+  
+  .toast--info {
+    border-color: #2f86eb;
+  }
+  
+  .toast--info .toast__icon {
+    color: #2f86eb;
+  }
+  
+  .toast--warning {
+    border-color: #ffc021;
+  }
+  
+  .toast--warning .toast__icon {
+    color: #ffc021;
+  }
+  
+  .toast--error {
+    border-color: #ff623d;
+  }
+  
+  .toast--error .toast__icon {
+    color: #ff623d;
+  }
+  
+  .toast + .toast {
+    margin-top: 24px;
+  }
+  
+  .toast__icon {
+    font-size: 24px;
+  }
+  
+  .toast__icon,
+  .toast__close {
+    padding: 0 16px;
+  }
+  
+  .toast__body {
+    flex-grow: 1;
+  }
+  
+  .toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  
+  .toast__close {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
