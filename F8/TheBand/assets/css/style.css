@@ -20,26 +20,48 @@ html{
     display: inline-block;
     line-height: 46px;
     /* căn giữa chữ */
+    position: relative;
 }
 
-#nav li a{
-    text-decoration: none;
+#nav > li > a{
     color: white;
+    text-decoration: none;
     padding: 0 24px;
-    display: inline-block;
+    display: block;
 }
 
-#nav li:hover a{
+#nav > li:hover > a,
+#subnav li:hover a{
     color: black;
-    background-color: gray;
+    background-color: #ccc;
+}
+
+#nav li:hover #subnav{
+    display: block;
 }
 
 #subnav{
     display: none;
+    position: absolute;
+    /* lấy góc của more làm vị trí vì là block nên đẩy nhau xuống dưới thành dọc  */
+    background-color: white;
+}
+
+#subnav li{
+    display: block;
+}
+
+#subnav li a{
+    text-decoration: none;
+    color: black;
+    padding: 0 24px;
+    display: block;
+    width: 100%;
 }
 
 #slider{
-
+    min-height: 500px;
+    background-color: gray;
 }
 
 #content{
