@@ -7,13 +7,24 @@
 html{
     font-family: Arial, Helvetica, sans-serif;
 }
+
 #main{
 
 }
 
 #header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* nổi lên phụ thuộc trình duyệt */
     height: 46px;
     background-color: black;
+    z-index: 1;
+}
+
+#nav{
+    display: inline-block;
 }
 
 #nav li{
@@ -29,6 +40,27 @@ html{
     padding: 0 24px;
     display: block;
 }
+
+.nav-more-icon{
+    font-size: 13px;
+}
+
+#search-btn{
+    float: right;
+    line-height: 46px;
+    padding: 0 24px;
+}
+
+#search-btn:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.search-icon{
+    color: white;
+    font-size: 20px;
+}
+
 
 #nav > li:hover > a,
 #subnav li:hover a{
@@ -60,12 +92,34 @@ html{
 }
 
 #slider{
-    min-height: 500px;
-    background-color: gray;
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    /* bằng 50% chiều ngang của nó */
+    background: url('/F8/TheBand/assets/img/slider/slider1.jpg') top center / cover no-repeat;
+}
+
+.text-content{
+    position: absolute;
+    color: white;
+    width: 100%;
+    text-align: center;
+    bottom: 47px;
+}
+
+.text-header{
+    font-weight: 500;
+    /* độ dày chữ */
+    font-size: 24px;
+}
+
+.text-description{
+    font-size: 15px;
+    margin-top: 25px;
 }
 
 #content{
-
+    
 }
 
 #footer{
