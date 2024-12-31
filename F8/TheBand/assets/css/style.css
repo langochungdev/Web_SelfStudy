@@ -118,10 +118,222 @@ html{
     margin-top: 25px;
 }
 
-#content{
+.content-section{
+    width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px 0;
+}
+
+.text-header{
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 4px;
+    font-weight: 400px;
+}
+
+.text-sub{
+    margin-top: 25px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.text-about{
+    margin-top: 25px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.picture-list{
+    margin-top: 62px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pic{
+    display: inline-block;
     
 }
 
-#footer{
+.pic p{
+    text-align: center;
+}
 
+.pic img{
+    margin-top: 15px;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.tour{
+    background-color: black;
+    color: white;
+}
+
+.tickets-list{
+    margin-top: 40px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    list-style: none;
+}
+
+.tickets-list li{
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+}
+
+.sold-out{
+    margin-left: 16px;
+    padding: 3px 4px;
+    background-color: red;
+    color: white;
+}
+
+.quantity{
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.buy-tickets-list{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+}
+
+.buy-tickets{
+    display: block;
+    width: 245px;
+    height: 390px;
+    background-color: white;
+    color: black;
+}
+
+.buy-tickets img{
+    width: 100%;
+    height: 183px;
+}
+
+.content-buy-tickets{
+    margin: 16px;
+}
+
+.name-coutry{
+    font-weight: bolder;
+}
+
+.dates-text{
+    margin: 15px 0;
+    opacity: 0.6;
+}
+
+.line-hight-en{
+    line-height: 1.4;
+}
+
+.btn-buy-tickets{
+    margin-top: 15px;
+    width: 107px;
+    height: 38px;
+    border: 0;
+    background-color: black;
+    color: white;
+}
+
+.btn-buy-tickets:hover{
+    background-color: #ccc;
+    color: black;
+    cursor: pointer
+}
+
+.box-contact{
+    margin-top: 47px;
+    display: flex;
+}
+
+.text-contact-list{
+    display: block;
+    width: 50%;
+}
+
+.text-contact-icon{
+    padding-right: 10px;
+}
+
+.input-contact{
+    display: block;
+    width: 50%;
+}
+
+.contact-name, 
+.contact-email{
+    width: 183px;
+    height: 40px;
+    padding-left: 4px;
+    border: 1px solid #ccc;
+}
+
+.contact-email{
+    float: right;
+}
+
+.contact-mess{
+    width: 100%;
+    height: 40px;
+    padding-left: 4px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+}
+
+.btn-send{
+    float: right;
+    margin-top: 16px;
+    width: 71px;
+    height: 38px;
+    border: 0;
+    background-color: black;
+    color: white;
+}
+
+.btn-send:hover{
+    background-color: #ccc;
+    color: black;
+    cursor: pointer
+}
+
+#footer{
+    padding: 94px 0;
+    text-align: center;
+    color: #666666;
+}
+
+#footer .socials-list a{
+    text-decoration: none;
+    color: #666666;
+    font-size: 24px;
+}
+
+#footer .socials-list a:hover{
+    opacity: 0.6;
+}
+
+#footer p{
+    margin-top: 15px;
+}
+
+#footer>p>a{
+    color: #666666;
+}
+
+.map img{
+    width: 100%;
 }
